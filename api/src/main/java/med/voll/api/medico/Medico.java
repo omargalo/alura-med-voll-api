@@ -1,11 +1,19 @@
 package med.voll.api.medico;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import med.voll.api.direccion.Direccion;
 
 // Entidad Medico se encarga de la persistencia de datos con nuestro modelo de base de datos
 @Table(name = "medicos")
 @Entity(name = "Medico")
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(of = "id")
 public class Medico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
