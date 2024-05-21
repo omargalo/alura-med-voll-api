@@ -37,6 +37,26 @@ public class Medico {
 
     }
 
+    public void actualizarDatos(DatosActualizarMedico datosActualizarMedico) {
+        if(datosActualizarMedico.nombre() != null){
+            this.nombre = datosActualizarMedico.nombre();
+        }
+        if(datosActualizarMedico.documento() != null){
+            this.documento = datosActualizarMedico.documento();
+        }
+        if(datosActualizarMedico.direccion() != null){
+            this.direccion = direccion.actualizarDatos(datosActualizarMedico.direccion());
+        }
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -84,4 +104,5 @@ public class Medico {
     public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
     }
+
 }
