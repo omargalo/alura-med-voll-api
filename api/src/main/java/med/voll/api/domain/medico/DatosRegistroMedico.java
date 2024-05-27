@@ -1,20 +1,18 @@
 package med.voll.api.domain.medico;
 
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.*;
 import med.voll.api.domain.direccion.DatosDireccion;
 
-// DatosRegistroMedico es nuestro DTO para recibir lo que viene de la API
 public record DatosRegistroMedico(
+
         @NotBlank
         String nombre,
         @NotBlank
         @Email
         String email,
         @NotBlank
+        @Size(min = 0, max = 15)
         String telefono,
         @NotBlank
         @Pattern(regexp = "\\d{4,6}")
@@ -23,6 +21,5 @@ public record DatosRegistroMedico(
         Especialidad especialidad,
         @NotNull
         @Valid
-        DatosDireccion direccion
-) {
+        DatosDireccion direccion) {
 }
